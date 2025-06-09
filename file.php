@@ -38,6 +38,28 @@
     }
     
 
-    // print_r($arr);
+    // print_r($data);
+    foreach ($data as $data1) {
+        $stmt = $conn->prepare("INSERT INTO players(player_name, age, team_name, role) VALUES (?, ?, ?, ?)");
+        $stmt->bindParam(1, $data1['playername']);
+        $stmt->bindParam(2, $data1['Age']);
+        $stmt->bindParam(3, $data1['Teamname']);
+        $stmt->bindParam(4, $data1['Role']);
+        $stmt->execute();
     }
+}
+    $stmt=$conn->query("select * from players");
+    $data=$stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
+<table border="1">
+    <?php 
+        foreach($data as $data1){
+            echo "<tr>";
+            foreach($data1 as $data2){
+    ?>
+        <td>
+                <?php echo $data2; ?>
+        </td>
+
+    <?php } echo "</tr>"; } ?>
+</table>
