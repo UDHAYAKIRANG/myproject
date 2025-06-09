@@ -38,5 +38,6 @@
     // $object->car();
     $object1=new D(1818);
     // $object1->car();
+        echo "hello";
     }
 ?>

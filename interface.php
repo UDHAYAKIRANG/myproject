@@ -10,4 +10,5 @@
     }
     $object=new B();
     $object->car();
+    echo "hello";
 ?>
