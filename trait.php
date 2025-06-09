@@ -21,4 +21,5 @@
     $obj->bike();
     // $obj->car();-
     // $obj->dog();
+    echo "virat";
 ?>
